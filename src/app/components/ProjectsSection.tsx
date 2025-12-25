@@ -32,6 +32,7 @@ export function ProjectsSection() {
       description: 'A responsive portfolio website showcasing projects and skills with modern design and animations.',
       tech: ['ReactJS', 'Tailwind CSS', 'Motion'],
       image: new URL('../../assets/images/web.jpg', import.meta.url).href,
+      repoUrl: 'https://github.com/thulnm0018-code/portfolio.git',
       year: '2024'
     },
   ];
@@ -39,7 +40,7 @@ export function ProjectsSection() {
   return (
     <section ref={sectionRef} id="projects" className="min-h-screen py-32 px-12 relative overflow-hidden" style={{ backgroundColor: 'transparent' }}>
       {/* Animated Background */}
-      <motion.div 
+      <motion.div
         className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#1a1a3e] opacity-5"
         style={{ y }}
       ></motion.div>
@@ -53,9 +54,9 @@ export function ProjectsSection() {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <motion.span 
+          <motion.span
             className="text-[#1a1a3e]/60 block mb-2"
-            style={{ 
+            style={{
               fontFamily: 'Montserrat, sans-serif',
               fontSize: '0.75rem',
               letterSpacing: '0.3em',
@@ -70,7 +71,7 @@ export function ProjectsSection() {
           </motion.span>
           <motion.h2
             className="text-[#1a1a3e] accent-underline"
-            style={{ 
+            style={{
               fontFamily: 'Cinzel, serif',
               fontSize: 'clamp(3rem, 8vw, 5rem)',
               fontWeight: 400,
@@ -98,35 +99,35 @@ export function ProjectsSection() {
               {index % 2 === 0 ? (
                 // Layout 1: Image on left, info on right
                 <div className="grid grid-cols-12 gap-8 items-start">
-                  <motion.div 
+                  <motion.div
                     className="col-span-12 lg:col-span-8"
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1, delay: 0.2 }}
                     viewport={{ once: true }}
                   >
-                    <motion.div 
+                    <motion.div
                       className="aspect-[16/10] overflow-hidden"
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.6 }}
                     >
-                      <motion.img 
-                        src={project.image} 
+                      <motion.img
+                        src={project.image}
                         alt={project.title}
                         className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
                       />
                     </motion.div>
                   </motion.div>
-                  <motion.div 
+                  <motion.div
                     className="col-span-12 lg:col-span-4 lg:pt-12"
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1, delay: 0.4 }}
                     viewport={{ once: true }}
                   >
-                    <motion.p 
+                    <motion.p
                       className="text-[#1a1a3e]/60 mb-4"
-                      style={{ 
+                      style={{
                         fontFamily: 'Montserrat, sans-serif',
                         fontSize: '0.75rem',
                         letterSpacing: '0.3em',
@@ -139,9 +140,9 @@ export function ProjectsSection() {
                     >
                       {project.year}
                     </motion.p>
-                    <h3 
+                    <h3
                       className="text-accent mb-6"
-                      style={{ 
+                      style={{
                         fontFamily: 'Cormorant Garamond, serif',
                         fontSize: '2.5rem',
                         fontWeight: 600
@@ -149,7 +150,7 @@ export function ProjectsSection() {
                     >
                       {project.title}
                     </h3>
-                    <p 
+                    <p
                       className="text-[#333] mb-8 leading-relaxed"
                       style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.875rem', fontWeight: 300 }}
                     >
@@ -157,7 +158,7 @@ export function ProjectsSection() {
                     </p>
                     <div className="space-y-2 mb-8">
                       {project.tech.map((tech, techIndex) => (
-                        <motion.p 
+                        <motion.p
                           key={tech}
                           className="text-[#1a1a3e]"
                           style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', letterSpacing: '0.1em' }}
@@ -186,14 +187,14 @@ export function ProjectsSection() {
               ) : (
                 // Layout 2: Info on left, image on right
                 <div className="grid grid-cols-12 gap-8 items-center">
-                  <motion.div 
+                  <motion.div
                     className="col-span-12 lg:col-span-5"
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1, delay: 0.2 }}
                     viewport={{ once: true }}
                   >
-                    <motion.div 
+                    <motion.div
                       className="h-[1px] w-full bg-[#1a1a3e] mb-8"
                       initial={{ scaleX: 0 }}
                       whileInView={{ scaleX: 1 }}
@@ -201,9 +202,9 @@ export function ProjectsSection() {
                       viewport={{ once: true }}
                       style={{ transformOrigin: "left" }}
                     ></motion.div>
-                    <p 
+                    <p
                       className="text-[#1a1a3e]/60 mb-4"
-                      style={{ 
+                      style={{
                         fontFamily: 'Montserrat, sans-serif',
                         fontSize: '0.75rem',
                         letterSpacing: '0.3em',
@@ -212,9 +213,9 @@ export function ProjectsSection() {
                     >
                       {project.year}
                     </p>
-                    <h3 
+                    <h3
                       className="text-[#1a1a3e] mb-6"
-                      style={{ 
+                      style={{
                         fontFamily: 'Cormorant Garamond, serif',
                         fontSize: '3rem',
                         fontWeight: 600
@@ -222,7 +223,7 @@ export function ProjectsSection() {
                     >
                       {project.title}
                     </h3>
-                    <p 
+                    <p
                       className="text-[#333] mb-8 leading-relaxed"
                       style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '1rem', fontWeight: 300 }}
                     >
@@ -230,7 +231,7 @@ export function ProjectsSection() {
                     </p>
                     <div className="flex flex-wrap gap-3 mb-8">
                       {project.tech.map((tech, techIndex) => (
-                        <motion.span 
+                        <motion.span
                           key={tech}
                           className="text-[#1a1a3e]/70"
                           style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem' }}
@@ -255,20 +256,20 @@ export function ProjectsSection() {
                       <ExternalLink size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-500" />
                     </motion.a>
                   </motion.div>
-                  <motion.div 
+                  <motion.div
                     className="col-span-12 lg:col-span-7"
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1, delay: 0.4 }}
                     viewport={{ once: true }}
                   >
-                    <motion.div 
+                    <motion.div
                       className="aspect-[4/3] overflow-hidden"
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.6 }}
                     >
-                      <motion.img 
-                        src={project.image} 
+                      <motion.img
+                        src={project.image}
                         alt={project.title}
                         className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
                       />
